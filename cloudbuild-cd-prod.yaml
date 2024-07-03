@@ -1,0 +1,12 @@
+steps:
+- name: 'gcr.io/cloud-builders/kubectl'
+  id: Deploy
+  args:
+  - 'apply'
+  - '-k'
+  - 'overlays/prod/'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-west1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=cymbal-prod'
+options:
+  logging: CLOUD_LOGGING_ONLY
